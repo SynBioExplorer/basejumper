@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Basejumper</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>Basejumper</h1>
+        <!-- Basecalling Input -->
+        <label for="basecalling">Select Basecaller:</label>
+        <select id="basecalling">
+            <option value="dorado">Dorado</option>
+            <option value="no">None</option>
+        </select>
+        <br>
+
+        <div id="doradoInputDiv" style="display: none;"> <!-- This should be hidden initially -->
+            <!-- Input directories -->
+            <label for="doradoInputDir">Dorado Input Directory:</label>
+            <input type="text" id="doradoInputDir">
+            <br>
+        </div>
+
+        <div id="doradoOutputDiv" style="display: none;"> <!-- This should be hidden initially -->
+            <label for="doradoOutputDir">Dorado Output Directory:</label>
+            <input type="text" id="doradoOutputDir">
+            <br>
+        </div>
+
+        <div id="genericInputDiv">
+            <label for="genericInputDir">Input Directory:</label>
+            <input type="text" id="genericInputDir">
+            <br>
+        </div>
+        
+        <div id="genericOutputDiv">
+            <label for="genericOutputDir">Output Directory:</label>
+            <input type="text" id="genericOutputDir">
+            <br>
+        </div>
+
+        <div id="kitNameDiv" style="display: none;">
+            <label for="kit-name">Select Kit Name:</label>
+            <select id="kit-name" name="kit_name">
+                <option value="">       </option>  
+                <option value="EXP-NBD103">EXP-NBD103</option>
+                <option value="EXP-NBD104">EXP-NBD104</option>
+                <option value="EXP-NBD114">EXP-NBD114</option>
+                <option value="EXP-NBD114-24">EXP-NBD114-24</option>
+                <option value="EXP-NBD196">EXP-NBD196</option>
+                <option value="EXP-PBC001">EXP-PBC001</option>
+                <option value="EXP-PBC096">EXP-PBC096</option>
+                <option value="SQK-16S024">SQK-16S024</option>
+                <option value="SQK-16S114-24">SQK-16S114-24</option>
+                <option value="SQK-LWB001">SQK-LWB001</option>
+                <option value="SQK-MLK111-96-XL">SQK-MLK111-96-XL</option>
+                <option value="SQK-MLK114-96-XL">SQK-MLK114-96-XL</option>
+                <option value="SQK-NBD111-24">SQK-NBD111-24</option>
+                <option value="SQK-NBD111-96">SQK-NBD111-96</option>
+                <option value="SQK-NBD114-24">SQK-NBD114-24</option>
+                <option value="SQK-NBD114-96">SQK-NBD114-96</option>
+                <option value="SQK-PBK004">SQK-PBK004</option>
+                <option value="SQK-PCB109">SQK-PCB109</option>
+                <option value="SQK-PCB110">SQK-PCB110</option>
+                <option value="SQK-PCB111-24">SQK-PCB111-24</option>
+                <option value="SQK-PCB114-24">SQK-PCB114-24</option>
+                <option value="SQK-RAB201">SQK-RAB201</option>
+                <option value="SQK-RAB204">SQK-RAB204</option>
+                <option value="SQK-RBK001">SQK-RBK001</option>
+                <option value="SQK-RBK004" >SQK-RBK004</option>
+                <option value="SQK-RBK110-96">SQK-RBK110-96</option>
+                <option value="SQK-RBK111-24">SQK-RBK111-24</option>
+                <option value="SQK-RBK111-96">SQK-RBK111-96</option>
+                <option value="SQK-RBK114-24">SQK-RBK114-24</option>
+                <option value="SQK-RBK114-96">SQK-RBK114-96</option>
+                <option value="SQK-RLB001">SQK-RLB001</option>
+                <option value="SQK-RPB004">SQK-RPB004</option>
+                <option value="SQK-RPB114-24">SQK-RPB114-24</option>
+                <option value="TWIST-16-UDI">TWIST-16-UDI</option>
+                <option value="TWIST-96A-UDI">TWIST-96A-UDI</option>
+                <option value="VSK-PTC001">VSK-PTC001</option>
+                <option value="VSK-VMK001">VSK-VMK001</option>
+                <option value="VSK-VMK004">VSK-VMK004</option>
+                <option value="VSK-VPS001">VSK-VPS001</option>
+            </select>
+        </div>
+        
+
+        <!-- QUAST analysis input -->
+        <label for="quast">Perform QUAST analysis?</label>
+        <select id="quast">
+            <option value="yes">Yes</option>
+            <option value="no" selected>No</option>
+        </select>
+        <br>
+
+        <label for="referenceFile" style="display: none;">Path to the reference file:</label>
+        <input type="text" id="referenceFile" style="display: none;">
+        <br>
+
+        <!-- Barcodes -->
+        <label for="numBarcodes">Number of Barcodes:</label>
+        <input type="number" id="numBarcodes" min="1">
+        <br>
+
+        <!-- Start Button -->
+        <button id="startButton">Start</button>
+
+        <!-- Output Console -->
+        <pre id="consoleOutput"></pre>
+         <!-- Container for Results Table -->
+         <div id="results-container"></div>    
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

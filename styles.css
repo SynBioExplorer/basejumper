@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Use full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    background-color: rgba(245, 245, 245, 0.9); /* Light grey background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Adjust this to your preference */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label, input, select, button {
+    width: 100%; /* Full width within the content-wrapper */
+    margin-bottom: 10px; /* Space between elements */
+}
+
+input, select {
+    padding: 10px; /* Makes it easier to click and looks nicer */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Includes padding in the width */
+}
+
+button {
+    cursor: pointer; /* Changes the mouse pointer on hover */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Adjust button color as needed */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+#consoleOutput {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 200px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables scrolling for overflow text */
+    margin-top: 10px; /* Space after the console output */
+}
+
+* Styles for the results table */
+#results-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Adjust as needed for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+}
+
+#results-container th, #results-container td {
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 8px; /* Padding for cell content */
+    text-align: left; /* Align text to left, adjust as needed */
+}
+
+#results-container th {
+    background-color: #f4f4f4; /* Light grey background for headers */
+    color: #333; /* Dark text color for contrast */
+    font-weight: bold; /* Make header text bold */
+}
+
+#results-container tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+#results-container tr:hover {
+    background-color: #eef; /* Highlight color on row hover */
+}
+
+/* Optional: Style for hyperlinks in the table */
+#results-container a {
+    color: #06c; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+#results-container a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}

@@ -1,0 +1,52 @@
+{
+  "name": "basejumper",
+  "version": "27.0.2",
+  "description": "A basic Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "electron",
+    "desktop",
+    "app"
+  ],
+  "author": "Felix Meier",
+  "license": "",
+  "devDependencies": {
+    "electron": "27.0.2",
+    "electron-builder": "^25.0.5"
+  },
+  "build": {
+    "appId": "com.felixmeier.basejumper",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "icon.icns",
+      "extraResources": [
+        {
+          "from": "/opt/homebrew/opt/openssl@3",
+          "to": "openssl"
+        },
+        {
+          "from": "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/libtorch",
+          "to": "libtorch"
+        }
+      ]
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "renderer.js",
+      "package.json",
+      "node_modules/**",
+      "icon.icns",
+      "styles.css",
+      "background.jpg",
+      "dorado/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
